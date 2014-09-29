@@ -1,5 +1,4 @@
-var substitutor = require('cli-compiler').substitute;
-
+var substitutor = require('cli-compiler').legacy.substitute;
 var loaded = false;
 
 /**

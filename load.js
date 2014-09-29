@@ -1,5 +1,5 @@
 var util = require('util');
-var loader = require('cli-compiler');
+var loader = require('cli-compiler').legacy.load;
 var loaded = false;
 
 /**
