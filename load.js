@@ -23,7 +23,7 @@ module.exports = function(options) {
       return next();
     }
 
-    console.log('running load middleware %s', loader);
+    //console.log('running load middleware %s', loader);
 
     // we need to set up some initial
     // data for the substitute middleware
@@ -37,7 +37,7 @@ module.exports = function(options) {
       if(arguments.length) {
         return next.apply(null, arguments);
       }
-      console.log('got load event');
+      //console.log('got load event');
       scope.emit('load', req);
       if(conf.load.cache) loaded = module.exports.loaded = true;
       next();
