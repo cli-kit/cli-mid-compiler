@@ -2,6 +2,7 @@ var load = require('./load');
 var substitute = require('./substitute');
 
 function deprecated(msg, parameters) {
+  if(process.env.NODE_ENV === 'test') return;
   if(parameters && parameters.length) {
     return console.warn(msg, parameters);
   }
