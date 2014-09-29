@@ -2,7 +2,10 @@ var load = require('./load');
 var substitute = require('./substitute');
 
 function deprecated(msg, parameters) {
-  console.warn(msg, parameters || []);
+  if(parameters && parameters.length) {
+    return console.warn(msg, parameters);
+  }
+  console.warn(msg);
 }
 
 module.exports = {
