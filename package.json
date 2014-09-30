@@ -25,7 +25,8 @@
     "markdown"
   ],
   "dependencies": {
-    "cli-compiler": "^0.1.22"
+    "cli-compiler": "^0.1.22",
+    "cli-deprecate": "^1.0.1"
   },
   "devDependencies": {
     "chai": "^1.9.1",

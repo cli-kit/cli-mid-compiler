@@ -1,21 +1,15 @@
 var load = require('./load');
 var substitute = require('./substitute');
 
-function deprecated(msg, parameters) {
-  if(process.env.NODE_ENV === 'test') return;
-  if(parameters && parameters.length) {
-    return console.warn(msg, parameters);
-  }
-  console.warn(msg);
-}
+var deprecate = require('cli-deprecate');
 
 module.exports = {
   load: function() {
-    deprecated('load middleware is deprecated, please use compiler');
+    deprecate('load middleware is deprecated, please use compiler');
     return load.apply(this, arguments);
   },
   substitute: function() {
-    deprecated('substitute middleware is deprecated, please use compiler');
+    deprecate('substitute middleware is deprecated, please use compiler');
     return substitute.apply(this, arguments);
   }
 }
