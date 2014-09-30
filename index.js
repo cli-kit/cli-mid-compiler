@@ -14,10 +14,11 @@ module.exports = function compiler(config) {
     }
   }
   if(!config) return this;
+  var scope = this;
   return function compiler(req, next) {
     compile(config, function(err, creq) {
       if(err) return next(err);
-      req.compilation = creq;
+      scope.emit('load', req, creq);
       next();
     });
   }
