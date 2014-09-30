@@ -1,6 +1,6 @@
 {
   "name": "cli-mid-compiler",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Compiler middleware",
   "author": "muji <noop@xpm.io>",
   "repository": {
