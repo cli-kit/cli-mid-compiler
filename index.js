@@ -11,12 +11,17 @@ module.exports = function compiler(config) {
     config.cache = conf.load.cache;
     if(conf.substitute && conf.substitute.enabled !== undefined) {
       config.replace = conf.substitute.enabled;
+      config.escaping = conf.substitute.escaping;
     }
   }
   if(!config) return this;
   var scope = this;
   config.program = this;
   return function compiler(req, next) {
+    // allow disabling once in the chain
+    // interactive console programs will likely want
+    // to do this
+    if(config.enabled === false) return next();
     compile(config, function(err, creq) {
       if(err) return next(err);
       scope.emit('load', req, creq);
