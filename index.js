@@ -29,21 +29,3 @@ module.exports = function compiler(config) {
     });
   }
 }
-
-// DEPRECATED
-var loader = require('./load');
-var substitutor = require('./substitute');
-var deprecate = require('cli-deprecate');
-
-function load() {
-  deprecate('load middleware is deprecated, please use compiler');
-  return loader.apply(this, arguments);
-}
-
-function substitute() {
-  deprecate('substitute middleware is deprecated, please use compiler');
-  return substitutor.apply(this, arguments);
-}
-
-module.exports.load = load;
-module.exports.substitute = substitute;
