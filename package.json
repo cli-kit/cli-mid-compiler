@@ -25,12 +25,12 @@
     "markdown"
   ],
   "dependencies": {
-    "cli-compiler": "~0.1.32"
+    "cli-compiler": "~0.1.33"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
-    "istanbul": "^0.3.2",
-    "mocha": "^1.21.4"
+    "chai": "~3.2.0",
+    "istanbul": "~0.3.17",
+    "mocha": "~2.2.5"
   },
   "engine": [
     "node >= 0.10.21"
